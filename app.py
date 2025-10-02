@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 import io
 
-df = pd.read_csv('/kaggle/input/aqi-air-quality-index-scheduled-daily-update/data_date.csv', on_bad_lines='skip')
+df = pd.read_csv('data_date.csv', on_bad_lines='skip')
 df['Date'] = pd.to_datetime(df['Date'])
 df['Year'] = df['Date'].dt.year
 df['Month'] = df['Date'].dt.month
@@ -25,4 +25,5 @@ mse = mean_squared_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
 
 print(f"Mean Squared Error: {mse}")
+
 print(f"R-squared: {r2}")
